@@ -34,6 +34,8 @@ function addToOrder(itemName) {
     // Get the order items list and the order total element from the HTML
     const orderListItemElement = document.getElementById("order-items");
     const orderTotalElement = document.getElementById("order-total");
+    const clearOrderElement = document.getElementById("clear-order");
+
     // Create a list item for the order
     const orderItem = document.createElement("li");
     orderItem.textContent = itemName;
@@ -45,7 +47,7 @@ function addToOrder(itemName) {
     orderTotalElement.textContent = newTotal.toFixed(2);
     
     orderItem.addEventListener('click', () => removeOrder(orderItem));
-    
+    clearOrderElement.addEventListener('click', () => clearOrderFunction() )
 }
 
 function removeOrder (orderItem) {
@@ -58,6 +60,19 @@ function removeOrder (orderItem) {
         const itemPrice = 60; 
         const newTotal = currentTotal - itemPrice;
         orderTotalElement.textContent = newTotal.toFixed(2);
+}
+
+function clearOrderFunction () {
+    const orderListItemElement = document.getElementById("order-items");
+    const orderTotalElement = document.getElementById("order-total");
+
+    while (orderListItemElement.firstChild){
+        orderListItemElement.removeChild(orderListItemElement.firstChild);
+    }
+
+
+    const newTotal = 0;
+    orderTotalElement.textContent = newTotal.toFixed(2);
 }
 
 // Function to initialize the menu system
