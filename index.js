@@ -8,8 +8,26 @@ const menu = {
 // Function to display menu items by category
 function displayMenuItems(menu) {
     // Get the menu container element from the HTML
+    const menuContainer = document.getElementById("menu");
     // Loop through each category and its items in the menu object
-    
+    for(const [ category, items] of Object.entries(menu)){
+
+        const categoryElement = document.createElement("h3");
+        categoryElement.textContent = category;
+
+        menuContainer.appendChild(categoryElement);
+
+        const listContainer = document.createElement("ul");
+        menuContainer.appendChild(listContainer);
+
+        items.forEach( item => {
+            const listItem = document.createElement("li");
+            listItem.textContent = item;
+            listItem.addEventListener("click", () => addToOrder(item));
+            listContainer.appendChild(listItem);
+            
+        });
+    }
         // Create an element to represent the category
 
         // Set the text content of the category element to the category name
@@ -36,21 +54,28 @@ function displayMenuItems(menu) {
 // Callback function for adding an item to the order
 function addToOrder(itemName) {
     // Get the order items list and the order total element from the HTML
-
+    const orderListItemElement = document.getElementById("order-items");
+    const orderTotalElement = document.getElementById("order-total");
     // Create a list item for the order
-
+    const orderItem = document.createElement("li");
+    orderItem.textContent = itemName;
+    orderListItemElement.appendChild(orderItem);
     // Set the text content of the list item to the item name
 
     // Append the list item to the order items list
 
     // Calculate and update the total price
-
+    const currentTotal = parseFloat(orderTotalElement.textContent);
+    const itemPrice = 60; // Assuming each item costs R90 (you can customize this)
+    const newTotal = currentTotal + itemPrice;
+    orderTotalElement.textContent = newTotal.toFixed(2);
     // Update the text content of the order total element with the new total
 }
 
 // Function to initialize the menu system
 function initMenuSystem(menu) {
     // Call the function to display menu items
+    displayMenuItems(menu);
 }
 
 // Start the menu system by calling the init function
