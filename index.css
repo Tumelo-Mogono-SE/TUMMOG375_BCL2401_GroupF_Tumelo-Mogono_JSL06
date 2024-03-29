@@ -80,3 +80,20 @@ footer {
     bottom: 0; /* Add this to position it at the bottom */
     width: 100%; /* Add this to span the full width */
 }
+
+button {
+    padding: 0.8em;
+    margin-top: 1em;
+    color: white;
+    background-color: #007bff;
+    border-radius: 5em; 
+    border-color: white;
+    border-width: 0.2em;
+    transition: 200ms ease-in-out;
+}
+
+button:hover {
+    background-color: white;
+    color: #007bff;
+    border-color: #007bff;
+}
