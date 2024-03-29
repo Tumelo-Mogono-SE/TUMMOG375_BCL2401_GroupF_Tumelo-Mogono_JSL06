@@ -1,59 +1,26 @@
 # [JSL06] Submission: CodeCuisine Menu Display System Challenge
+# Project Overview:
 
-You will:
-1. Use the provided Starter Code Repository: https://github.com/CodeSpace-Academy/Module_6_StudentNo_Classcode_Group_Name-Surname_JSL06
-2. Code your solution.
-3. Commit changes to your GitHub repository.
-4. Submit the GitHub Repository Link to the LMS [JSL06] Submission Project Tab.
-
-In this coding challenge, you will build a simple menu display system for a fictional UberEats restaurant called "CodeCuisine." The goal is to display different categories of food items and allow users to add items to their order with a click. This challenge will help you apply various JavaScript concepts, including functions, closures, and event handling, to create an interactive menu.
+In this coding projct, I will be building a simple menu display system for a fictional UberEats resturant called "CodeCuisine". The goal is to display different catergories of food items and allow users to add items to their order with a click. This project will help me apply various JavaScript concepts, including functions, closures, and event handling to create an interactive menu.
 
 ![alt text](JSL06-solution.gif)
 
-## Objectives:
+# Project Process
 
-- Create and use functions to dynamically populate the menu items on the page.
-- Implement a callback function to handle adding items to the order.
-- Use closures to maintain the state of the order.
-- Utilize function expressions and anonymous functions.
-- Call built-in functions and create custom functions to manage the menu and order system.
+* Using the function called displayMenuItems() with the parameter set to menu which is taking in the variable which has an object with the keys and value which contains an array of the food items.
+* Inside the displayMenuItems I fetched the element with the id menu and assigned it to a variable.
+* I then have a for loop which sets the variables in an array of the object from the variable menu. Inside the loop, I create an H3 element which has it's content set to the category name which is the key from the object. I then add the H3 element into the "menu" element which is a section. I then created an unorganised list which i add into the menu section element.
+* I then have a foreach loop which iterates through the items array which has a function which inside it I create a list element which has it's content being the parameter of the function. I then have an event listener on the list element which if clicked has a call back function which has the function inside it which add the item to the order list.
+* I then have a function called addToOrder which adds item's to the order list.
+* Inside this function I fetch elements from the DOM which are the unorganised list, the span element for total price and the button to clear order. I then created a list element and assigned it to a variable which I added to it's content the parameter of the function and added the list element to the unorganised list element. Using the parsefloat to assign the content from the HTML to a variable as a number instead of a string. Created a variable and have 60 assigned to it. The current price and item price is used to be assigned to a variable called newTotal which is used to be assigned to the span element for total price with a fixed two decimal places.
+* I then added an eventlistener to the list elements so that if clicked the function inside the call back function removes the list element from the unorganised list.
+* I also have another event listener added to the clear order button element which when clicked it calls back  a function which inside it the function that deletes all the list elements and sets the total price to 0.
 
-## Instructions:
 
-1. **Use the Project Files:** Begin by accessing the starter code in the JSL06 GitHub repo.
+# Challenges
 
-2. **JavaScript Implementation**: Use the provided starter code in `index.js` as a foundation for your application. The starter code contains placeholders for key functions and comments to guide you through the implementation.
+No challenges for this project, I only struggled with adding the first additional feature which was to delete indiviual items from the order list and reduce the price based on what was deleted, it took some time and research to come up with a solution. Thanks to the solution I managed to come up with an extra feature to clear the order with one button to delete all list items and set total price to zero.
 
-    - `menu`: The `menu` object contains sample menu data, including categories and items. You can expand this menu with more items if needed.
+# Feedback
 
-    - `displayMenuItems(menu)`: This function should dynamically create and display menu items grouped by category. Iterate over the `menu` object and create HTML elements for each category and item. Attach event listeners to the menu items to handle adding items to the order.
-
-    - `addToOrder(itemName)`: Implement this callback function to update the order summary when an item is added. You can use closures to maintain the state of the order. Calculate and update the total price accordingly.
-
-    - `initMenuSystem(menu)`: Call the `displayMenuItems` function with the menu data and attach event listeners to menu items.
-
-3. **Testing**: Thoroughly test your application to ensure that it can correctly add items to the order and that the order total updates as expected.
-
-## What You Need to Do:
-
-To complete this challenge, follow these steps:
-
-1. Clone the provided Starter Code Repository to your local development environment: [Starter Code Repository](https://github.com/CodeSpace-Academy/Module_6_StudentNo_Classcode_Group_Name-Surname_JSL06).
-2. Open the cloned project in your code editor.
-3. Code your solution following the provided instructions and comments in the starter code.
-4. Commit your changes to your local Git repository with meaningful commit messages.
-5. Push your local Git repository to your GitHub account.
-6. Verify that the changes have been successfully pushed to your GitHub repository.
-
-## What You Need to Include:
-
-1. Ensure that your code includes the necessary modifications to meet the challenge requirements.
-2. Your GitHub repository should contain the updated code files.
-
-## How We'll Assess Your Work:
-
-1. We will review your GitHub repository to ensure that it contains the updated code files.
-2. We will assess the modifications made to the code to verify that they effectively meet the challenge requirements.
-3. We will consider the commit history and meaningful commit messages to evaluate your coding process.
-
-By following these steps and completing the challenge, you will demonstrate your ability to create interactive web applications using JavaScript. Good luck, and enjoy building the CodeCuisine Menu Display System!
+No feedback, only thing I can say is that I enjoyed the challenge and this helped spark my interest to apply additional features to what was initually required.
